@@ -1,0 +1,155 @@
+1.9.3p194 :002 > b = Beer.new name:"Punk IPA", style:"IPA"
+ => #<Beer id: nil, name: "Punk IPA", style: "IPA", brewery_id: nil, created_at: nil, updated_at: nil> 
+1.9.3p194 :003 > b.save
+   (0.2ms)  begin transaction
+  SQL (32.6ms)  INSERT INTO "beers" ("created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 26 Jan 2014 19:59:31 UTC +00:00], ["name", "Punk IPA"], ["style", "IPA"], ["updated_at", Sun, 26 Jan 2014 19:59:31 UTC +00:00]]
+   (165.2ms)  commit transaction
+ => true 
+1.9.3p194 :004 > b = Beer.new name:"Nanny State", style:"lowalcohol"
+ => #<Beer id: nil, name: "Nanny State", style: "lowalcohol", brewery_id: nil, created_at: nil, updated_at: nil> 
+1.9.3p194 :005 > b.save
+   (0.2ms)  begin transaction
+  SQL (0.8ms)  INSERT INTO "beers" ("created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sun, 26 Jan 2014 20:00:01 UTC +00:00], ["name", "Nanny State"], ["style", "lowalcohol"], ["updated_at", Sun, 26 Jan 2014 20:00:01 UTC +00:00]]
+   (146.1ms)  commit transaction
+ => true 
+1.9.3p194 :006 > Beer.all
+  Beer Load (0.5ms)  SELECT "beers".* FROM "beers"
+ => #<ActiveRecord::Relation [#<Beer id: 1, name: "Iso 3", style: "Lager", brewery_id: 1, created_at: "2014-01-23 17:40:54", updated_at: "2014-01-23 17:40:54">, #<Beer id: 2, name: "Karhu", style: "Lager", brewery_id: 1, created_at: "2014-01-23 17:40:54", updated_at: "2014-01-23 17:40:54">, #<Beer id: 3, name: "Tuplahumala", style: "Lager", brewery_id: 1, created_at: "2014-01-23 17:40:54", updated_at: "2014-01-23 17:40:54">, #<Beer id: 4, name: "Huvila Pale Ale", style: "Pale Ale", brewery_id: 2, created_at: "2014-01-23 17:40:54", updated_at: "2014-01-23 17:40:54">, #<Beer id: 5, name: "X Porter", style: "Porter", brewery_id: 2, created_at: "2014-01-23 17:40:54", updated_at: "2014-01-23 17:40:54">, #<Beer id: 6, name: "Hefezeizen", style: "Weizen", brewery_id: 3, created_at: "2014-01-23 17:40:54", updated_at: "2014-01-23 17:40:54">, #<Beer id: 7, name: "Helles", style: "Lager", brewery_id: 3, created_at: "2014-01-23 17:40:54", updated_at: "2014-01-23 17:40:54">, #<Beer id: 10, name: "Punk IPA", style: "IPA", brewery_id: nil, created_at: "2014-01-26 19:59:31", updated_at: "2014-01-26 19:59:31">, #<Beer id: 11, name: "Nanny State", style: "lowalcohol", brewery_id: nil, created_at: "2014-01-26 20:00:01", updated_at: "2014-01-26 20:00:01">]> 
+1.9.3p194 :007 > b.brewery
+ => nil 
+1.9.3p194 :008 > b.brewery = BrewDog
+NameError: uninitialized constant BrewDog
+	from (irb):8
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands/console.rb:90:in `start'
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands/console.rb:9:in `start'
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+1.9.3p194 :009 > b
+ => #<Beer id: 11, name: "Nanny State", style: "lowalcohol", brewery_id: nil, created_at: "2014-01-26 20:00:01", updated_at: "2014-01-26 20:00:01"> 
+1.9.3p194 :010 > BrewDog.reload
+NameError: uninitialized constant BrewDog
+	from (irb):10
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands/console.rb:90:in `start'
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands/console.rb:9:in `start'
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+1.9.3p194 :011 > r = Rating.last
+  Rating Load (0.3ms)  SELECT "ratings".* FROM "ratings" ORDER BY "ratings"."id" DESC LIMIT 1
+ => #<Rating id: 3, score: 17, beer_id: 1, created_at: "2014-01-26 17:57:19", updated_at: "2014-01-26 17:57:19"> 
+1.9.3p194 :012 > r.to_s
+ => "#<Rating:0x000000038cba88>" 
+1.9.3p194 :013 > r.to_s
+ => "#<Rating:0x000000038cba88>" 
+1.9.3p194 :014 > reload!
+Reloading...
+ => true 
+1.9.3p194 :015 > r.to_s
+ => "#<Rating:0x000000038cba88>" 
+1.9.3p194 :016 > b.brewery = BrewDog
+NameError: uninitialized constant BrewDog
+	from (irb):16
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands/console.rb:90:in `start'
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands/console.rb:9:in `start'
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+1.9.3p194 :017 > b
+ => #<Beer id: 11, name: "Nanny State", style: "lowalcohol", brewery_id: nil, created_at: "2014-01-26 20:00:01", updated_at: "2014-01-26 20:00:01"> 
+1.9.3p194 :018 > b
+ => #<Beer id: 11, name: "Nanny State", style: "lowalcohol", brewery_id: nil, created_at: "2014-01-26 20:00:01", updated_at: "2014-01-26 20:00:01"> 
+1.9.3p194 :019 > Brewery.where(name: "BrewDog").first
+  Brewery Load (0.3ms)  SELECT "breweries".* FROM "breweries" WHERE "breweries"."name" = 'BrewDog' ORDER BY "breweries"."id" ASC LIMIT 1
+ => #<Brewery id: 4, name: "BrewDog", year: 2007, created_at: "2014-01-26 18:01:10", updated_at: "2014-01-26 18:01:10"> 
+1.9.3p194 :020 > panimo = Brewery.where(name: "BrewDog").first
+  Brewery Load (0.5ms)  SELECT "breweries".* FROM "breweries" WHERE "breweries"."name" = 'BrewDog' ORDER BY "breweries"."id" ASC LIMIT 1
+ => #<Brewery id: 4, name: "BrewDog", year: 2007, created_at: "2014-01-26 18:01:10", updated_at: "2014-01-26 18:01:10"> 
+1.9.3p194 :021 > panimo.beer
+NoMethodError: undefined method `beer' for #<Brewery:0x00000002c4c028>
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/activemodel-4.0.2/lib/active_model/attribute_methods.rb:439:in `method_missing'
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-4.0.2/lib/active_record/attribute_methods.rb:155:in `method_missing'
+	from (irb):21
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands/console.rb:90:in `start'
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands/console.rb:9:in `start'
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+1.9.3p194 :022 > panimo.beers
+  Beer Load (0.3ms)  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = ?  [["brewery_id", 4]]
+ => #<ActiveRecord::Associations::CollectionProxy []> 
+1.9.3p194 :023 > panimo.beers << Beer.where(name: "Punk IPA").first
+  Beer Load (0.4ms)  SELECT "beers".* FROM "beers" WHERE "beers"."name" = 'Punk IPA' ORDER BY "beers"."id" ASC LIMIT 1
+   (0.2ms)  begin transaction
+  SQL (0.5ms)  UPDATE "beers" SET "brewery_id" = ?, "updated_at" = ? WHERE "beers"."id" = 10  [["brewery_id", 4], ["updated_at", Sun, 26 Jan 2014 20:10:40 UTC +00:00]]
+   (163.3ms)  commit transaction
+ => #<ActiveRecord::Associations::CollectionProxy [#<Beer id: 10, name: "Punk IPA", style: "IPA", brewery_id: 4, created_at: "2014-01-26 19:59:31", updated_at: "2014-01-26 20:10:40">]> 
+1.9.3p194 :024 > panimo.beers << Beer.where(name: "Nanny State").first
+  Beer Load (0.5ms)  SELECT "beers".* FROM "beers" WHERE "beers"."name" = 'Nanny State' ORDER BY "beers"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (0.6ms)  UPDATE "beers" SET "brewery_id" = ?, "updated_at" = ? WHERE "beers"."id" = 11  [["brewery_id", 4], ["updated_at", Sun, 26 Jan 2014 20:10:48 UTC +00:00]]
+   (170.3ms)  commit transaction
+ => #<ActiveRecord::Associations::CollectionProxy [#<Beer id: 10, name: "Punk IPA", style: "IPA", brewery_id: 4, created_at: "2014-01-26 19:59:31", updated_at: "2014-01-26 20:10:40">, #<Beer id: 11, name: "Nanny State", style: "lowalcohol", brewery_id: 4, created_at: "2014-01-26 20:00:01", updated_at: "2014-01-26 20:10:48">]> 
+1.9.3p194 :025 > panimo.save!
+   (0.1ms)  begin transaction
+   (0.2ms)  commit transaction
+ => true 
+1.9.3p194 :026 > Rating
+ => Rating(id: integer, score: integer, beer_id: integer, created_at: datetime, updated_at: datetime) 
+1.9.3p194 :027 > b = Beer.where(name: "Nanny State").first
+  Beer Load (0.4ms)  SELECT "beers".* FROM "beers" WHERE "beers"."name" = 'Nanny State' ORDER BY "beers"."id" ASC LIMIT 1
+ => #<Beer id: 11, name: "Nanny State", style: "lowalcohol", brewery_id: 4, created_at: "2014-01-26 20:00:01", updated_at: "2014-01-26 20:10:48"> 
+1.9.3p194 :028 > b.ratings
+  Rating Load (0.5ms)  SELECT "ratings".* FROM "ratings" WHERE "ratings"."beer_id" = ?  [["beer_id", 11]]
+ => #<ActiveRecord::Associations::CollectionProxy []> 
+1.9.3p194 :029 > Ratings
+NameError: uninitialized constant Ratings
+	from (irb):29
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands/console.rb:90:in `start'
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands/console.rb:9:in `start'
+	from /home/laura/.rvm/gems/ruby-1.9.3-p194/gems/railties-4.0.2/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+1.9.3p194 :030 > Rating
+ => Rating(id: integer, score: integer, beer_id: integer, created_at: datetime, updated_at: datetime) 
+1.9.3p194 :031 > Rating.count
+   (0.3ms)  SELECT COUNT(*) FROM "ratings"
+ => 3 
+1.9.3p194 :032 > b.ratings << Rating.first
+  Rating Load (0.4ms)  SELECT "ratings".* FROM "ratings" ORDER BY "ratings"."id" ASC LIMIT 1
+   (0.2ms)  begin transaction
+  SQL (0.4ms)  UPDATE "ratings" SET "beer_id" = ?, "updated_at" = ? WHERE "ratings"."id" = 1  [["beer_id", 11], ["updated_at", Sun, 26 Jan 2014 20:12:25 UTC +00:00]]
+   (160.1ms)  commit transaction
+ => #<ActiveRecord::Associations::CollectionProxy [#<Rating id: 1, score: 10, beer_id: 11, created_at: "2014-01-26 17:57:06", updated_at: "2014-01-26 20:12:25">]> 
+1.9.3p194 :033 > b.ratings << Rating.last
+  Rating Load (0.4ms)  SELECT "ratings".* FROM "ratings" ORDER BY "ratings"."id" DESC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (0.5ms)  UPDATE "ratings" SET "beer_id" = ?, "updated_at" = ? WHERE "ratings"."id" = 3  [["beer_id", 11], ["updated_at", Sun, 26 Jan 2014 20:12:35 UTC +00:00]]
+   (153.6ms)  commit transaction
+ => #<ActiveRecord::Associations::CollectionProxy [#<Rating id: 1, score: 10, beer_id: 11, created_at: "2014-01-26 17:57:06", updated_at: "2014-01-26 20:12:25">, #<Rating id: 3, score: 17, beer_id: 11, created_at: "2014-01-26 17:57:19", updated_at: "2014-01-26 20:12:35">]> 
+1.9.3p194 :034 > b.save!
+   (0.1ms)  begin transaction
+   (0.1ms)  commit transaction
+ => true 
+1.9.3p194 :035 > b = Beer.where(name: "Punk IPA").first
+  Beer Load (0.4ms)  SELECT "beers".* FROM "beers" WHERE "beers"."name" = 'Punk IPA' ORDER BY "beers"."id" ASC LIMIT 1
+ => #<Beer id: 10, name: "Punk IPA", style: "IPA", brewery_id: 4, created_at: "2014-01-26 19:59:31", updated_at: "2014-01-26 20:10:40"> 
+1.9.3p194 :036 > b.ratings << Rating.first
+  Rating Load (0.4ms)  SELECT "ratings".* FROM "ratings" ORDER BY "ratings"."id" ASC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (0.5ms)  UPDATE "ratings" SET "beer_id" = ?, "updated_at" = ? WHERE "ratings"."id" = 1  [["beer_id", 10], ["updated_at", Sun, 26 Jan 2014 20:12:56 UTC +00:00]]
+   (145.1ms)  commit transaction
+  Rating Load (0.2ms)  SELECT "ratings".* FROM "ratings" WHERE "ratings"."beer_id" = ?  [["beer_id", 10]]
+ => #<ActiveRecord::Associations::CollectionProxy [#<Rating id: 1, score: 10, beer_id: 10, created_at: "2014-01-26 17:57:06", updated_at: "2014-01-26 20:12:56">]> 
+1.9.3p194 :037 > b.ratings << Rating.last
+  Rating Load (0.4ms)  SELECT "ratings".* FROM "ratings" ORDER BY "ratings"."id" DESC LIMIT 1
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  UPDATE "ratings" SET "beer_id" = ?, "updated_at" = ? WHERE "ratings"."id" = 3  [["beer_id", 10], ["updated_at", Sun, 26 Jan 2014 20:12:59 UTC +00:00]]
+   (150.5ms)  commit transaction
+ => #<ActiveRecord::Associations::CollectionProxy [#<Rating id: 1, score: 10, beer_id: 10, created_at: "2014-01-26 17:57:06", updated_at: "2014-01-26 20:12:56">, #<Rating id: 3, score: 17, beer_id: 10, created_at: "2014-01-26 17:57:19", updated_at: "2014-01-26 20:12:59">]> 
+1.9.3p194 :038 > b.save!
+   (0.1ms)  begin transaction
+   (0.1ms)  commit transaction
+ => true 
+1.9.3p194 :039 > 
+
