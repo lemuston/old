@@ -1,0 +1,104 @@
+laura@lauran-kone ~/RoR/ratebeer $ heroku logs
+2014-02-02T10:52:50.454651+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `select'
+2014-02-02T10:52:50.454651+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `block in start'
+2014-02-02T10:52:50.454651+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:160:in `start'
+2014-02-02T10:52:50.454651+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:32:in `start'
+2014-02-02T10:52:50.454651+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.5.2/lib/rack/handler/webrick.rb:14:in `run'
+2014-02-02T10:52:50.454651+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+2014-02-02T10:52:50.454651+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.0.2/lib/rails/commands/server.rb:84:in `start'
+2014-02-02T10:52:50.454651+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.0.2/lib/rails/commands.rb:76:in `block in <top (required)>'
+2014-02-02T10:52:50.454904+00:00 app[web.1]: 	bin/rails:4:in `<main>'
+2014-02-02T10:52:50.454651+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.0.2/lib/rails/commands.rb:71:in `tap'
+2014-02-02T10:52:50.454904+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.0.2/lib/rails/commands.rb:71:in `<top (required)>'
+2014-02-02T10:52:50.454904+00:00 app[web.1]: [2014-02-02 10:52:50] INFO  going to shutdown ...
+2014-02-02T10:52:50.454904+00:00 app[web.1]: => Booting WEBrick
+2014-02-02T10:52:50.454904+00:00 app[web.1]: 	bin/rails:4:in `require'
+2014-02-02T10:52:50.454904+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2014-02-02T10:52:50.454904+00:00 app[web.1]: [2014-02-02 10:52:50] INFO  WEBrick::HTTPServer#start done.
+2014-02-02T10:52:50.454904+00:00 app[web.1]: => Rails 4.0.2 application starting in production on http://0.0.0.0:57416
+2014-02-02T10:52:50.454904+00:00 app[web.1]: => Ctrl-C to shutdown server
+2014-02-02T10:52:50.454904+00:00 app[web.1]: Exiting
+2014-02-02T10:52:51.988149+00:00 heroku[web.1]: Process exited with status 143
+2014-02-02T10:54:27.953718+00:00 heroku[api]: Starting process with command `bundle exec rake db:migrate` by laura.mustonen@cs.helsinki.fi
+2014-02-02T10:54:32.143946+00:00 heroku[run.2553]: Awaiting client
+2014-02-02T10:54:32.178275+00:00 heroku[run.2553]: Starting process with command `bundle exec rake db:migrate`
+2014-02-02T10:54:32.294075+00:00 heroku[run.2553]: State changed from starting to up
+2014-02-02T10:54:35.923551+00:00 heroku[run.2553]: Process exited with status 0
+2014-02-02T10:54:35.933474+00:00 heroku[run.2553]: State changed from up to complete
+2014-02-02T10:56:15.815617+00:00 heroku[api]: Starting process with command `bin/rails console` by laura.mustonen@cs.helsinki.fi
+2014-02-02T10:56:20.110814+00:00 heroku[run.7674]: Awaiting client
+2014-02-02T10:56:20.145749+00:00 heroku[run.7674]: Starting process with command `bin/rails console`
+2014-02-02T10:56:20.259407+00:00 heroku[run.7674]: State changed from starting to up
+2014-02-02T10:56:42.368843+00:00 heroku[run.7674]: Process exited with status 0
+2014-02-02T10:56:42.389168+00:00 heroku[run.7674]: State changed from up to complete
+2014-02-02T11:57:11.278846+00:00 heroku[web.1]: State changed from up to down
+2014-02-02T11:57:11.278236+00:00 heroku[web.1]: Idling
+2014-02-02T11:57:14.652989+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2014-02-02T11:57:15.278390+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:32:in `start'
+2014-02-02T11:57:15.278390+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.5.2/lib/rack/handler/webrick.rb:14:in `run'
+2014-02-02T11:57:15.278390+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.0.2/lib/rails/commands.rb:76:in `block in <top (required)>'
+2014-02-02T11:57:15.278390+00:00 app[web.1]: [2014-02-02 11:57:15] FATAL SignalException: SIGTERM
+2014-02-02T11:57:15.278390+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `select'
+2014-02-02T11:57:15.278390+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `block in start'
+2014-02-02T11:57:15.278390+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:160:in `start'
+2014-02-02T11:57:15.278390+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.0.2/lib/rails/commands/server.rb:84:in `start'
+2014-02-02T11:57:15.278618+00:00 app[web.1]: [2014-02-02 11:57:15] INFO  going to shutdown ...
+2014-02-02T11:57:15.278992+00:00 app[web.1]: => Rails 4.0.2 application starting in production on http://0.0.0.0:44763
+2014-02-02T11:57:15.278992+00:00 app[web.1]: Exiting
+2014-02-02T11:57:15.278992+00:00 app[web.1]: => Ctrl-C to shutdown server
+2014-02-02T11:57:15.278618+00:00 app[web.1]: 	bin/rails:4:in `<main>'
+2014-02-02T11:57:15.278992+00:00 app[web.1]: [2014-02-02 11:57:15] INFO  WEBrick::HTTPServer#start done.
+2014-02-02T11:57:15.278992+00:00 app[web.1]: => Booting WEBrick
+2014-02-02T11:57:15.278618+00:00 app[web.1]: 	bin/rails:4:in `require'
+2014-02-02T11:57:15.278618+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.0.2/lib/rails/commands.rb:71:in `<top (required)>'
+2014-02-02T11:57:15.278390+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+2014-02-02T11:57:15.278390+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.0.2/lib/rails/commands.rb:71:in `tap'
+2014-02-02T11:57:15.278992+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2014-02-02T11:57:16.661049+00:00 heroku[web.1]: Process exited with status 143
+2014-02-02T16:37:52.508050+00:00 heroku[api]: Starting process with command `bundle exec rake db:seed` by laura.mustonen@cs.helsinki.fi
+2014-02-02T16:37:57.681509+00:00 heroku[run.7344]: Awaiting client
+2014-02-02T16:37:57.750105+00:00 heroku[run.7344]: State changed from starting to up
+2014-02-02T16:37:57.732075+00:00 heroku[run.7344]: Starting process wit
+h command `bundle exec rake db:seed`
+2014-02-02T16:38:02.354732+00:00 heroku[run.7344]: Process exited with status 0
+2014-02-02T16:38:02.390379+00:00 heroku[run.7344]: State changed from up to complete
+2014-02-02T16:38:12.944073+00:00 heroku[api]: Starting process with command `bin/rails console` by laura.mustonen@cs.helsinki.fi
+2014-02-02T16:38:17.765885+00:00 heroku[run.2357]: Awaiting client
+2014-02-02T16:38:17.844955+00:00 heroku[run.2357]: Starting process with command `bin/rails console`
+2014-02-02T16:38:17.923379+00:00 heroku[run.2357]: State changed from starting to up
+2014-02-02T16:39:50.579579+00:00 heroku[run.2357]: Process exited with status 0
+2014-02-02T16:39:50.603737+00:00 heroku[run.2357]: State changed from up to complete
+2014-02-02T16:52:47.836997+00:00 heroku[run.7901]: Awaiting client
+2014-02-02T16:52:47.875615+00:00 heroku[run.7901]: Starting process with command `bundle exec rake db:migrate`
+2014-02-02T16:52:47.984324+00:00 heroku[run.7901]: State changed from starting to up
+2014-02-02T16:52:51.382377+00:00 heroku[run.7901]: State changed from up to complete
+2014-02-02T16:52:51.368538+00:00 heroku[run.7901]: Process exited with status 0
+2014-02-02T16:53:02.523373+00:00 heroku[api]: Starting process with command `bundle exec rake db:seed` by laura.mustonen@cs.helsinki.fi
+2014-02-02T16:53:07.046994+00:00 heroku[run.9337]: Awaiting client
+2014-02-02T16:53:07.084217+00:00 heroku[run.9337]: Starting process with command `bundle exec rake db:seed`
+2014-02-02T16:53:07.203969+00:00 heroku[run.9337]: State changed from starting to up
+2014-02-02T16:53:11.343855+00:00 heroku[run.9337]: Process exited with status 0
+2014-02-02T16:53:11.357707+00:00 heroku[run.9337]: State changed from up to complete
+2014-02-02T16:52:43.364436+00:00 heroku[api]: Starting process with command `bundle exec rake db:migrate` by laura.mustonen@cs.helsinki.fi
+2014-02-02T17:00:50+00:00 heroku[slug-compiler]: Slug compilation started
+2014-02-02T17:01:09.193342+00:00 heroku[api]: Deploy c584fa7 by laura.mustonen@cs.helsinki.fi
+2014-02-02T17:01:09.219420+00:00 heroku[api]: Release v6 created by laura.mustonen@cs.helsinki.fi
+2014-02-02T17:01:09+00:00 heroku[slug-compiler]: Slug compilation finished
+2014-02-02T17:01:09.486129+00:00 heroku[web.1]: State changed from down to starting
+2014-02-02T17:01:13.145211+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 8013 -e $RAILS_ENV`
+2014-02-02T17:01:15.659517+00:00 app[web.1]: [2014-02-02 17:01:15] INFO  WEBrick 1.3.1
+2014-02-02T17:01:15.659517+00:00 app[web.1]: [2014-02-02 17:01:15] INFO  ruby 2.0.0 (2013-11-22) [x86_64-linux]
+2014-02-02T17:01:15.659731+00:00 app[web.1]: [2014-02-02 17:01:15] INFO  WEBrick::HTTPServer#start: pid=2 port=8013
+2014-02-02T17:01:15.996457+00:00 heroku[web.1]: State changed from starting to up
+2014-02-02T17:03:37.500928+00:00 heroku[run.6036]: Awaiting client
+2014-02-02T17:03:37.529992+00:00 heroku[run.6036]: Starting process with command `bundle exec rake db:migrate`
+2014-02-02T17:03:37.700309+00:00 heroku[run.6036]: State changed from starting to up
+2014-02-02T17:03:40.863074+00:00 heroku[run.6036]: Process exited with status 0
+2014-02-02T17:03:40.877655+00:00 heroku[run.6036]: State changed from up to complete
+2014-02-02T17:03:47.602101+00:00 heroku[api]: Starting process with command `bundle exec rake db:seed` by laura.mustonen@cs.helsinki.fi
+2014-02-02T17:03:52.825401+00:00 heroku[run.3336]: State changed from starting to up
+2014-02-02T17:03:53.362027+00:00 heroku[run.3336]: Starting process with command `bundle exec rake db:seed`
+2014-02-02T17:03:53.320315+00:00 heroku[run.3336]: Awaiting client
+2014-02-02T17:03:58.013734+00:00 heroku[run.3336]: State changed from up to complete
+2014-02-02T17:03:58.001716+00:00 heroku[run.3336]: Process exited with status 0
+
