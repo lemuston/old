@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Username:</strong>
-  <%= @user.username %>
+
+  <h2><%= @user.username %></h2>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+has made <%= pluralize(@user.ratings.count,'rating') %>
+
+</p>
+<ul>
+<%= @user.ratings.each do |rating| %>
+<li><%= rating %></li>
+<% end %>
+</ul>
+          
+      
