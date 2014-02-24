@@ -15,6 +15,8 @@ Ratebeer::Application.routes.draw do
 
   get 'ratings/new', to:'ratings#new'
 
+  get 'beerlist', to:'beers#list'
+
   post 'ratings', to: 'ratings#create'
 
   get 'signup', to: 'users#new'
@@ -30,11 +32,10 @@ Ratebeer::Application.routes.draw do
   post 'places', to:'places#search'
 
   resources :places, only:[:index, :show]
-# mikä generoi samat polut kuin seuraavat kaksi     
-# get 'places', to:'places#index'
-# get 'places/:id', to:'places#show'
 
-  post 'places', to:'places#search'
+  get 'ngbeerlist', to:'beers#nglist'
+
+  get 'brewerylist', to:'breweries#list'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
