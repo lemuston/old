@@ -2,6 +2,12 @@ source 'https://rubygems.org'
 
 gem 'therubyracer', platforms: :ruby
 
+gem 'httparty'
+
+gem 'capybara'
+
+gem "rails-settings-cached", "0.3.1"
+
 group :development, :test do
   gem 'sqlite3'
 end
